@@ -82,9 +82,48 @@ body {
   font-size:1.1rem; font-weight:300; color:#57534e;
   line-height:1.7; margin-bottom:2rem;
 }
-.hero-buttons  { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }
+.hero-buttons  { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem; }
 .hero-buttons .btn-primary,
 .hero-buttons .btn-secondary { padding:0.75rem 2rem; font-size:1rem; }
+
+/* Special Browse Button */
+.btn-browse {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(28, 25, 23, 0.3);
+}
+.btn-browse::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+.btn-browse:hover::before {
+  left: 100%;
+}
+.btn-browse:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(28, 25, 23, 0.4);
+}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-subtext {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #57534e;
+  margin-top: 0.5rem;
+}
 
 .hero-trust    { display:flex; align-items:center; gap:0.4rem; font-size:0.875rem; font-weight:300; color:#57534e; }
 .trust-star    { width:16px; height:16px; color:#d97706; fill:#d97706; }
@@ -273,3 +312,174 @@ body {
   .about-image,
   .why-us-image    { height:280px; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   LAPTOPS PAGE
+   ══════════════════════════════════════════════════════════════════ */
+
+.laptops-page { min-height:100vh; background:#fafaf9; }
+
+/* ── Header ── */
+.laptops-header { padding:8rem 0 3rem; background:white; }
+.laptops-header-content { text-align:center; max-width:700px; margin:0 auto; }
+.laptops-title {
+  font-size:clamp(2.5rem,5vw,3.5rem); font-weight:200;
+  letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.laptops-subtitle {
+  font-size:1.125rem; font-weight:300; color:#57534e; line-height:1.7;
+}
+
+/* ── Layout ── */
+.laptops-content { padding:3rem 0 6rem; }
+.laptops-layout {
+  display:grid; grid-template-columns:280px 1fr;
+  gap:3rem; align-items:start;
+}
+@media(max-width:1024px){ .laptops-layout { grid-template-columns:1fr; } }
+
+/* ── Filters Sidebar ── */
+.filters-sidebar {
+  background:white; border:1px solid #e7e5e4; border-radius:4px;
+  padding:1.5rem; position:sticky; top:6rem;
+}
+@media(max-width:1024px){ .filters-sidebar { position:static; } }
+
+.filters-header {
+  display:flex; align-items:center; gap:0.5rem;
+  margin-bottom:1.5rem; padding-bottom:1rem;
+  border-bottom:1px solid #e7e5e4;
+}
+.filters-header h3 { font-size:1.125rem; font-weight:300; }
+.icon-sm { width:18px; height:18px; }
+
+.filter-group { margin-bottom:1.5rem; }
+.filter-title {
+  font-size:0.875rem; font-weight:400; text-transform:uppercase;
+  letter-spacing:0.05em; margin-bottom:0.75rem; color:#57534e;
+}
+.filter-options { display:flex; flex-direction:column; gap:0.5rem; }
+.filter-option {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.875rem; font-weight:300; cursor:pointer;
+}
+.filter-option input[type="radio"] {
+  width:16px; height:16px; cursor:pointer;
+}
+
+.filter-info {
+  margin-top:1.5rem; padding-top:1.5rem;
+  border-top:1px solid #e7e5e4;
+  display:flex; gap:0.75rem;
+}
+.info-title { font-size:0.875rem; font-weight:400; margin-bottom:0.25rem; }
+.info-text  { font-size:0.75rem; font-weight:300; color:#57534e; }
+
+/* ── Products Area ── */
+.products-area { width:100%; }
+.products-header {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:2rem;
+}
+.products-count { font-size:0.875rem; font-weight:300; color:#57534e; }
+
+/* ── Products Grid ── */
+.products-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:2rem;
+}
+@media(max-width:640px){ .products-grid { grid-template-columns:1fr; } }
+
+/* ── Product Card ── */
+.product-card {
+  background:white; border:1px solid #e7e5e4; border-radius:4px;
+  overflow:hidden; transition:all 0.3s; cursor:pointer;
+}
+.product-card:hover {
+  box-shadow:0 12px 32px rgba(0,0,0,0.1);
+  border-color:#a8a29e;
+  transform:translateY(-4px);
+}
+
+.product-image-wrapper {
+  position:relative; height:240px; overflow:hidden;
+  background:#f5f5f4;
+}
+.product-image {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 0.3s;
+}
+.product-card:hover .product-image { transform:scale(1.05); }
+
+.product-badges {
+  position:absolute; top:1rem; right:1rem;
+  display:flex; flex-direction:column; gap:0.5rem;
+}
+.badge {
+  padding:0.25rem 0.75rem; border-radius:2px;
+  font-size:0.75rem; font-weight:400;
+  text-transform:uppercase; letter-spacing:0.05em;
+}
+.badge.new { background:#1c1917; color:#fafaf9; }
+.badge.refurbished { background:#d97706; color:white; }
+
+.product-content { padding:1.5rem; }
+.product-name {
+  font-size:1.25rem; font-weight:300; letter-spacing:-0.01em;
+  margin-bottom:0.5rem; color:#1c1917;
+}
+.product-price {
+  font-size:1.5rem; font-weight:200; color:#1c1917;
+  margin-bottom:1rem;
+}
+
+/* Specs */
+.product-specs {
+  display:flex; flex-direction:column; gap:0.5rem;
+  margin-bottom:1rem; padding:1rem 0;
+  border-top:1px solid #e7e5e4;
+  border-bottom:1px solid #e7e5e4;
+}
+.spec-item {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.875rem; font-weight:300; color:#57534e;
+}
+.spec-icon { width:16px; height:16px; color:#1c1917; flex-shrink:0; }
+
+.product-warranty {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.875rem; font-weight:300; color:#57534e;
+  margin-bottom:1rem;
+}
+.warranty-icon { width:16px; height:16px; color:#16a34a; }
+
+.btn-product {
+  width:100%; padding:0.75rem;
+  background:#1c1917; color:#fafaf9;
+  border:none; border-radius:2px; font-weight:300;
+  cursor:pointer; transition:all 0.3s;
+  font-size:0.9rem;
+}
+.btn-product:hover { background:#292524; }
+
+/* No Results */
+.no-results {
+  text-align:center; padding:4rem 2rem;
+  color:#57534e; font-weight:300;
+}
+
+/* ── Nav Button ── */
+.btn-nav {
+  padding:0.4rem 1rem; background:transparent; color:#1c1917;
+  border:1px solid #d6d3d1; border-radius:2px; font-weight:300;
+  cursor:pointer; transition:all 0.3s; font-size:0.875rem;
+}
+.btn-nav:hover { background:#f5f5f4; }
+
+.btn-back {
+  display:flex; align-items:center; gap:0.5rem;
+  padding:0.4rem 1rem; background:transparent; color:#1c1917;
+  border:1px solid #d6d3d1; border-radius:2px; font-weight:300;
+  cursor:pointer; transition:all 0.3s; font-size:0.875rem;
+}
+.btn-back:hover { background:#f5f5f4; }
