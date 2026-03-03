@@ -59,6 +59,7 @@ function HomePage() {
               <a href="#repairs">Repairs</a>
               <a href="#about">About</a>
               <button className="btn-nav" onClick={() => navigate('/laptops')}>Shop Laptops</button>
+              <button className="btn-nav" onClick={() => navigate('/accessories')}>Accessories</button>
               <a href="#contact">Contact</a>
             </div>
           </div>

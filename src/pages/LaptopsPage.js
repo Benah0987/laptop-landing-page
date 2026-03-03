@@ -110,6 +110,57 @@ function LaptopsPage() {
       },
       warranty: "90 days",
       available: true
+    },
+    {
+      id: 7,
+      name: "HP Elite X2 1012 G1",
+      brand: "HP",
+      condition: "refurbished",
+      price: "KSh 30,000",
+      image: require('../images/laptops/laptop7.png'),
+      specs: {
+        processor: "Intel Core M5 6th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "12\" FHD touchscreen",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      available: true
+    },
+    {
+      id: 8,
+      name: "Lenovo X1 Yoga",
+      brand: "Lenovo",
+      condition: "refurbished",
+      price: "KSh 40,000",
+      image: require('../images/laptops/laptop8.png'),
+      specs: {
+        processor: "Intel Core i7 8th Gen",
+        ram: "16GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" FHD touchscreen 360°",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      available: true
+    },
+    {
+      id: 9,
+      name: "Dell Latitude 5440",
+      brand: "Dell",
+      condition: "refurbished",
+      price: "KSh 20,000",
+      image: require('../images/laptops/laptop9.png'),
+      specs: {
+        processor: "Intel Core i5 4th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" FHD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      available: true
     }
   ];
 
@@ -167,7 +218,7 @@ function LaptopsPage() {
               <div className="filter-group">
                 <h4 className="filter-title">Brand</h4>
                 <div className="filter-options">
-                  {['all', 'Dell', 'HP', 'Apple'].map(brand => (
+                  {['all', 'Dell', 'HP', 'Lenovo', 'Apple'].map(brand => (
                     <label key={brand} className="filter-option">
                       <input
                         type="radio"
