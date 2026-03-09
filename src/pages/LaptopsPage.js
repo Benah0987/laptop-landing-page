@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Laptop, Filter, ArrowLeft, Cpu, HardDrive, Monitor, Battery, CheckCircle } from 'lucide-react';
+import { Laptop, Filter, ArrowLeft, Cpu, HardDrive, Monitor, Battery, CheckCircle, Menu, X } from 'lucide-react';
 
 function LaptopsPage() {
   const navigate = useNavigate();
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [selectedCondition, setSelectedCondition] = useState('all');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // YOUR LAPTOPS - All image extensions corrected!
   const laptops = [
@@ -161,6 +162,23 @@ function LaptopsPage() {
       },
       warranty: "90 days",
       available: true
+    },
+    {
+      id: 10,
+      name: "HP Elite Dragonfly 1040 G7",
+      brand: "HP",
+      condition: "refurbished",
+      price: "KSh 55,000",
+      image: require('../images/laptops/laptop10.png'),
+      specs: {
+        processor: "Intel Core i7 10th Gen",
+        ram: "16GB DDR4",
+        storage: "512GB SSD",
+        display: "14\" FHD touchscreen 360°",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      available: true
     }
   ];
 
@@ -182,12 +200,34 @@ function LaptopsPage() {
               <div className="logo-icon"><Laptop className="icon" /></div>
               <span className="logo-text">BeIT Solutions</span>
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="nav-links">
               <button className="btn-back" onClick={() => navigate('/')}>
                 <ArrowLeft className="icon-sm" /> Back to Home
               </button>
+              <button className="btn-nav" onClick={() => navigate('/accessories')}>
+                Accessories
+              </button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="icon" /> : <Menu className="icon" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="mobile-nav">
+              <button className="btn-nav-mobile" onClick={() => { navigate('/'); setMobileMenuOpen(false); }}>
+                <ArrowLeft className="icon-sm" /> Back to Home
+              </button>
+              <button className="btn-nav-mobile" onClick={() => { navigate('/accessories'); setMobileMenuOpen(false); }}>
+                Accessories
+              </button>
+            </div>
+          )}
         </div>
       </nav>
 

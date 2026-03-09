@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Laptop, Wrench, ShoppingBag, CheckCircle, Phone, Mail, MapPin, Clock, Star } from 'lucide-react';
+import { Laptop, Wrench, ShoppingBag, CheckCircle, Phone, Mail, MapPin, Clock, Star, Menu, X } from 'lucide-react';
 import heroImg from '../images/hero.jpg';
 import aboutImg from '../images/about.jpg';
 import teamImg from '../images/team.jpg';
@@ -8,6 +8,7 @@ import teamImg from '../images/team.jpg';
 function HomePage() {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -54,6 +55,8 @@ function HomePage() {
               <div className="logo-icon"><Laptop className="icon" /></div>
               <span className="logo-text">BeIT Solutions</span>
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="nav-links">
               <a href="#services">Services</a>
               <a href="#repairs">Repairs</a>
@@ -62,7 +65,28 @@ function HomePage() {
               <button className="btn-nav" onClick={() => navigate('/accessories')}>Accessories</button>
               <a href="#contact">Contact</a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="icon" /> : <Menu className="icon" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="mobile-nav">
+              <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="#repairs" onClick={() => setMobileMenuOpen(false)}>Repairs</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <button className="btn-nav-mobile" onClick={() => { navigate('/laptops'); setMobileMenuOpen(false); }}>
+                Shop Laptops
+              </button>
+              <button className="btn-nav-mobile" onClick={() => { navigate('/accessories'); setMobileMenuOpen(false); }}>
+                Accessories
+              </button>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            </div>
+          )}
         </div>
       </nav>
 
