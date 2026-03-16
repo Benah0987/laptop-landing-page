@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Laptop, Filter, ArrowLeft, ShoppingBag, CheckCircle, Menu, X } from 'lucide-react';
+import { Laptop,  ArrowLeft, ShoppingBag, CheckCircle, Menu, X } from 'lucide-react';
 
 function AccessoriesPage() {
   const navigate = useNavigate();
