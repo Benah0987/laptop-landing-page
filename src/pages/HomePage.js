@@ -61,8 +61,7 @@ function HomePage() {
               <a href="#services">Services</a>
               <a href="#repairs">Repairs</a>
               <a href="#about">About</a>
-              <button className="btn-nav" onClick={() => navigate('/laptops')}>Shop Laptops</button>
-              <button className="btn-nav" onClick={() => navigate('/accessories')}>Accessories</button>
+              <button className="btn-nav" onClick={() => navigate('/laptops')}>Shop</button>
               <a href="#contact">Contact</a>
             </div>
 
@@ -79,10 +78,7 @@ function HomePage() {
               <a href="#repairs" onClick={() => setMobileMenuOpen(false)}>Repairs</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
               <button className="btn-nav-mobile" onClick={() => { navigate('/laptops'); setMobileMenuOpen(false); }}>
-                Shop Laptops
-              </button>
-              <button className="btn-nav-mobile" onClick={() => { navigate('/accessories'); setMobileMenuOpen(false); }}>
-                Accessories
+                Shop
               </button>
               <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>
@@ -111,14 +107,14 @@ function HomePage() {
               <div className="hero-buttons fade-in-4">
                 <button className="btn-primary btn-browse" onClick={() => navigate('/laptops')}>
                   <ShoppingBag className="btn-icon" />
-                  Shop Our Laptops
+                  Shop Now
                 </button>
                 <button className="btn-secondary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
                   Book Repair
                 </button>
               </div>
               <p className="hero-subtext fade-in-4">
-                ✨ Fresh stock added weekly • View 6 laptops available now
+                ✨ Fresh stock added weekly • 10 laptops + accessories available
               </p>
               <div className="hero-trust fade-in-4">
                 {[...Array(5)].map((_, i) => (
