@@ -169,6 +169,55 @@ function LaptopsPage() {
         battery: "6-8 hours"
       },
       warranty: "90 days"
+    },
+    {
+      id: 11,
+      type: 'laptop',
+      name: "HP ProBook 640 G4",
+      brand: "HP",
+      price: "KSh 24,999",
+      image: require('../images/laptops/laptop11.png'),
+      specs: {
+        processor: "Intel Core i5 8th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      extras: "Free laptop bag + Free mouse"
+    },
+    {
+      id: 12,
+      type: 'laptop',
+      name: "HP ProBook 440 G5",
+      brand: "HP",
+      price: "KSh 29,000",
+      image: require('../images/laptops/laptop12.png'),
+      specs: {
+        processor: "Intel Core i5 7th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days"
+    },
+    {
+      id: 13,
+      type: 'laptop',
+      name: "Lenovo ThinkPad X270",
+      brand: "Lenovo",
+      price: "KSh 17,000",
+      image: require('../images/laptops/laptop13.png'),
+      specs: {
+        processor: "Intel Core i5 6th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "12.5\" HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days"
     }
   ];
 
@@ -258,7 +307,7 @@ function LaptopsPage() {
 
   // CATEGORIES
   const categories = [
-    { value: 'laptops', label: 'Laptops', icon: '💻', count: laptops.length },
+    { value: 'laptops', label: 'Laptops', icon: '💻', count: 13 },
     { value: 'chargers', label: 'Chargers', icon: '🔌', count: accessories.filter(a => a.category === 'chargers').length },
     { value: 'mouse', label: 'Mouse', icon: '🖱️', count: accessories.filter(a => a.category === 'mouse').length },
     { value: 'keyboards', label: 'Keyboards', icon: '⌨️', count: accessories.filter(a => a.category === 'keyboards').length },
@@ -426,6 +475,11 @@ function LaptopsPage() {
                         <CheckCircle className="warranty-icon" />
                         <span>{item.warranty} warranty included</span>
                       </div>
+                      {item.extras && (
+                        <div className="product-extras">
+                          🎁 {item.extras}
+                        </div>
+                      )}
                     </>
                   ) : (
                     <>

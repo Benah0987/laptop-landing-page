@@ -114,7 +114,7 @@ function HomePage() {
                 </button>
               </div>
               <p className="hero-subtext fade-in-4">
-                💻 10 Laptops • 🔌 Chargers • 🖱️ Mouse • ⌨️ Keyboards • 💼 Bags & More
+                💻 13 Laptops • 🔌 Chargers • 🖱️ Mouse • ⌨️ Keyboards • 💼 Bags & More
               </p>
               <div className="hero-trust fade-in-4">
                 {[...Array(5)].map((_, i) => (
