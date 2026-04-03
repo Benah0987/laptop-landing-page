@@ -218,6 +218,57 @@ function LaptopsPage() {
         battery: "6-8 hours"
       },
       warranty: "90 days"
+    },
+    {
+      id: 14,
+      type: 'laptop',
+      name: "HP EliteBook 840 G5",
+      brand: "HP",
+      price: "KSh 28,000",
+      image: require('../images/laptops/laptop14.jpg'),
+      specs: {
+        processor: "Intel Core i5 8th Gen",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" Full HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      features: "USB Type-C | HDMI | Slim & Portable"
+    },
+    {
+      id: 15,
+      type: 'laptop',
+      name: "HP EliteBook 840 G3",
+      brand: "HP",
+      price: "KSh 23,500",
+      image: require('../images/laptops/laptop15.png'),
+      specs: {
+        processor: "Intel Core i5 6th Gen (2.3GHz)",
+        ram: "8GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      features: "Budget Friendly | Perfect for Students & Office"
+    },
+    {
+      id: 16,
+      type: 'laptop',
+      name: "HP ProBook 635 G7 Aero",
+      brand: "HP",
+      price: "KSh 28,000",
+      image: require('../images/laptops/laptop16.jpg'),
+      specs: {
+        processor: "AMD Ryzen 5",
+        ram: "16GB DDR4",
+        storage: "256GB SSD",
+        display: "14\" HD",
+        battery: "6-8 hours"
+      },
+      warranty: "90 days",
+      features: "Lightweight & Fast 💨 | High Performance | Perfect for Programming"
     }
   ];
 
@@ -307,7 +358,7 @@ function LaptopsPage() {
 
   // CATEGORIES
   const categories = [
-    { value: 'laptops', label: 'Laptops', icon: '💻', count: 13 },
+    { value: 'laptops', label: 'Laptops', icon: '💻', count: 16 },
     { value: 'chargers', label: 'Chargers', icon: '🔌', count: accessories.filter(a => a.category === 'chargers').length },
     { value: 'mouse', label: 'Mouse', icon: '🖱️', count: accessories.filter(a => a.category === 'mouse').length },
     { value: 'keyboards', label: 'Keyboards', icon: '⌨️', count: accessories.filter(a => a.category === 'keyboards').length },
@@ -478,6 +529,11 @@ function LaptopsPage() {
                       {item.extras && (
                         <div className="product-extras">
                           🎁 {item.extras}
+                        </div>
+                      )}
+                      {item.features && (
+                        <div className="product-features">
+                          ✨ {item.features}
                         </div>
                       )}
                     </>
