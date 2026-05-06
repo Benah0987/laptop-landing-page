@@ -715,3 +715,59 @@ body {
 
 /* ── Laptops Content ── */
 .laptops-content { padding:3rem 0 6rem; }
+
+/* ── Price Filter ── */
+.price-filter-section {
+  padding: 1.5rem 0;
+  background: white;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.price-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Price Button */
+.price-btn {
+  padding: 0.5rem 1.25rem;
+  background: white;
+  color: #1c1917;
+  border: 1px solid #d6d3d1;
+  border-radius: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.875rem;
+}
+
+/* Hover */
+.price-btn:hover {
+  background: #f5f5f4;
+  border-color: #a8a29e;
+}
+
+/* Active */
+.price-btn.active {
+  background: #1c1917;
+  color: #fafaf9;
+  border-color: #1c1917;
+}
+
+/* Optional: subtle highlight for budget ranges */
+.price-btn[data-range="budget"] {
+  border-color: #16a34a;
+  color: #166534;
+}
+
+.price-btn[data-range="budget"]:hover {
+  background: #ecfdf5;
+}
+
+.price-btn[data-range="budget"].active {
+  background: #16a34a;
+  color: white;
+  border-color: #16a34a;
+}
