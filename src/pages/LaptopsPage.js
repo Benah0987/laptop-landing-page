@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Laptop, ArrowLeft, Cpu, HardDrive, Monitor, Battery, CheckCircle, ShoppingBag, Menu, X } from 'lucide-react';
 
 function LaptopsPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('laptops');
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -400,7 +401,7 @@ function LaptopsPage() {
       category: "monitors",
       name: "Dahua E330CA QHD Curved Gaming Monitor",
       brand: "Dahua",
-      price: "KSh 29,000",
+      price: "KSh 32,000",
       image: require('../images/monitors/monitor3.png'),
       specs: {
         size: "27\" QHD (2560 x 1440)",
@@ -439,6 +440,14 @@ const getFilteredItems = () => {
     return accessories.filter(a => a.category === selectedCategory);
   }
 };
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category && category !== selectedCategory) {
+      setSelectedCategory(category);
+      setSelectedBrand('all');
+    }
+  }, [searchParams, selectedCategory]);
 
   const filteredItems = getFilteredItems();
   const isLaptopCategory = selectedCategory === 'laptops';
