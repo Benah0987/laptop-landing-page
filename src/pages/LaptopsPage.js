@@ -7,7 +7,6 @@ function LaptopsPage() {
   const [selectedCategory, setSelectedCategory] = useState('laptops');
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedPriceRange, setSelectedPriceRange] = useState('all');
 
   // LAPTOPS DATA
   const laptops = [
@@ -270,90 +269,7 @@ function LaptopsPage() {
       },
       warranty: "90 days",
       features: "Lightweight & Fast 💨 | High Performance | Perfect for Programming"
-    },
-    {
-  id: 17,
-  type: 'laptop',
-  name: "HP EliteBook 1040 G3",
-  brand: "HP",
-  price: "KSh 28,000",
-  image: require('../images/laptops/laptop17.png'),
-  specs: {
-    processor: "Intel Core i5 6th Gen",
-    ram: "8GB RAM",
-    storage: "256GB SSD",
-    display: "14\"",
-    battery: "6-8 hours"
-  },
-  warranty: "365 days"
-},
-{
-  id: 18,
-  type: 'laptop',
-  name: "HP EliteBook 830 G7",
-  brand: "HP",
-  price: "KSh 40,000",
-  image: require('../images/laptops/laptop18.jpg'),
-  specs: {
-    processor: "Intel Core i5 10th Gen",
-    ram: "8GB RAM",
-    storage: "256GB SSD",
-    display: "13.3\" FHD",
-    battery: "6-8 hours"
-  },
-  warranty: "365 days"
-},
-{
-  id: 19,
-  type: 'laptop',
-  name: "HP EliteBook 845 G8",
-  brand: "HP",
-  price: "KSh 38,000",
-  image: require('../images/laptops/laptop19.jpeg'),
-  specs: {
-    processor: "AMD Ryzen 5 PRO 5650U",
-    ram: "16GB DDR4",
-    storage: "256GB SSD",
-    display: "14\" FHD",
-    battery: "6-8 hours"
-  },
-  warranty: "365 days",
-  features: "AMD 6-Core Pro Performance | Radeon Graphics"
-},
-{
-  id: 20,
-  type: 'laptop',
-  name: "HP EliteBook 840 G7",
-  brand: "HP",
-  price: "KSh 33,000",
-  image: require('../images/laptops/laptop20.jpeg'),
-  specs: {
-    processor: "Intel Core i5-10210U (10th Gen)",
-    ram: "16GB RAM",
-    storage: "256GB PCIe SSD",
-    display: "14\" FHD IPS (1920x1080)",
-    battery: "6-8 hours"
-  },
-  warranty: "365 days",
-  features: "Fingerprint Reader | Backlit Keyboard"
-},
-{
-  id: 21,
-  type: 'laptop',
-  name: "HP EliteBook 1040 G6 x360",
-  brand: "HP",
-  price: "KSh 40,000",
-  image: require('../images/laptops/laptop21.jpeg'),
-  specs: {
-    processor: "Intel Core i5 8th Gen",
-    ram: "16GB RAM",
-    storage: "256GB SSD",
-    display: "14\" Touchscreen",
-    battery: "6-8 hours"
-  },
-  warranty: "365 days",
-  features: "360° Convertible | Touchscreen"
-}
+    }
   ];
 
   // ACCESSORIES DATA
@@ -440,9 +356,69 @@ function LaptopsPage() {
     }
   ];
 
+  // MONITORS DATA
+  const monitors = [
+    {
+      id: 201,
+      type: 'monitor',
+      category: "monitors",
+      name: "Dahua DHI-LM24-A200Y 24\" Monitor",
+      brand: "Dahua",
+      price: "KSh 12,500",
+      image: require('../images/monitors/monitor1.png'),
+      specs: {
+        size: "23.8\" FHD (1920 x 1080)",
+        panel: "IPS Panel",
+        refreshRate: "100Hz",
+        features: "Narrow Bezel | Low Blue Light | Flicker Free"
+      },
+      description: "23.8\" FHD display with IPS panel and 100Hz refresh rate",
+      warranty: "1 year",
+      highlights: "Wide Viewing Angle 178° | Eye Comfort Technology"
+    },
+    {
+      id: 202,
+      type: 'monitor',
+      category: "monitors",
+      name: "Dahua DHI-LM22-A200Y 22\" Monitor",
+      brand: "Dahua",
+      price: "KSh 10,000",
+      image: require('../images/monitors/monitor2.png'),
+      specs: {
+        size: "22\" FHD (1920 x 1080)",
+        panel: "LCD Panel",
+        refreshRate: "100Hz",
+        features: "Slim & Stylish | Multiple Connections"
+      },
+      description: "Performance. Clarity. Value. Smooth visuals. Sharp details.",
+      warranty: "1 year",
+      highlights: "VGA / HDMI Connectivity | Ideal for Work & Study"
+    },
+    {
+      id: 203,
+      type: 'monitor',
+      category: "monitors",
+      name: "Dahua E330CA QHD Curved Gaming Monitor",
+      brand: "Dahua",
+      price: "KSh 29,000",
+      image: require('../images/monitors/monitor3.png'),
+      specs: {
+        size: "27\" QHD (2560 x 1440)",
+        panel: "Curved VA Panel",
+        refreshRate: "180Hz",
+        features: "1ms Response | AMD FreeSync | 16.7M Colors"
+      },
+      description: "Elevate your game. See every detail. Win more.",
+      warranty: "1 year",
+      highlights: "Ultra-Smooth Gaming | Tear-Free Experience",
+      features: "180Hz Refresh Rate | 1ms Response Time | Gaming Optimized"
+    }
+  ];
+
   // CATEGORIES
   const categories = [
     { value: 'laptops', label: 'Laptops', icon: '💻', count: 16 },
+    { value: 'monitors', label: 'Monitors', icon: '🖥️', count: monitors.length }, //
     { value: 'chargers', label: 'Chargers', icon: '🔌', count: accessories.filter(a => a.category === 'chargers').length },
     { value: 'mouse', label: 'Mouse', icon: '🖱️', count: accessories.filter(a => a.category === 'mouse').length },
     { value: 'keyboards', label: 'Keyboards', icon: '⌨️', count: accessories.filter(a => a.category === 'keyboards').length },
@@ -451,62 +427,21 @@ function LaptopsPage() {
     { value: 'bags', label: 'Bags', icon: '💼', count: accessories.filter(a => a.category === 'bags').length },
     { value: 'ram', label: 'RAM', icon: '💾', count: accessories.filter(a => a.category === 'ram').length }
   ];
-  const priceRanges = [
-  { label: "15K - 20K", min: 15000, max: 20000 },
-  { label: "20K - 30K", min: 20000, max: 30000 },
-  { label: "30K - 40K", min: 30000, max: 40000 },
-  { label: "40K - 50K", min: 40000, max: 50000 },
-  { label: "50K - 60K", min: 50000, max: 60000 },
-  { label: "60K - 70K", min: 60000, max: 70000 }
-];
 
-
-const getNumericPrice = (price) => {
-  const cleaned = price.replace(/[^\d]/g, '');
-  const value = Number(cleaned);
-  return Number.isNaN(value) ? 0 : value;
-};
-
+  // Filter logic
+  // In your getFilteredItems function:
 const getFilteredItems = () => {
-  let items = [];
-
-  // Handle laptops
   if (selectedCategory === 'laptops') {
-    // Start with all laptops
-    items = laptops;
-
-    // Filter by brand
-    if (selectedBrand !== 'all') {
-      items = items.filter(item => item.brand === selectedBrand);
-    }
-
-    // Filter by price range
-    if (selectedPriceRange !== 'all') {
-      const selectedRange = priceRanges.find(
-        range => range.label === selectedPriceRange
-      );
-
-      if (selectedRange) {
-        items = items.filter(item => {
-          const price = getNumericPrice(item.price);
-          return price >= selectedRange.min && price <= selectedRange.max;
-        });
-      }
-    }
-
-    return items;
+    return selectedBrand === 'all' ? laptops : laptops.filter(l => l.brand === selectedBrand);
+  } else if (selectedCategory === 'monitors') {
+    return monitors; // This is the missing link!
+  } else {
+    return accessories.filter(a => a.category === selectedCategory);
   }
-
-  // Handle accessories
-  return accessories.filter(
-    item => item.category === selectedCategory
-  );
 };
 
   const filteredItems = getFilteredItems();
   const isLaptopCategory = selectedCategory === 'laptops';
-
-
 
   return (
     <div className="laptops-page">
@@ -573,56 +508,25 @@ const getFilteredItems = () => {
       </section>
 
       {/* Brand Filter (only for laptops) */}
-{/* Categories */}
-<section className="categories-section">...</section>
+      {isLaptopCategory && (
+        <section className="brand-filter-section">
+          <div className="container">
+            <div className="brand-filters">
+              {['all', 'Dell', 'HP', 'Lenovo', 'Apple'].map(brand => (
+                <button
+                  key={brand}
+                  className={`brand-btn ${selectedBrand === brand ? 'active' : ''}`}
+                  onClick={() => setSelectedBrand(brand)}
+                >
+                  {brand === 'all' ? 'All Brands' : brand}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
-{/* Brand Filter */}
-{isLaptopCategory && (
-  <section className="brand-filter-section">
-    <div className="container">
-      <div className="brand-filters">
-        {['all', 'Dell', 'HP', 'Lenovo', 'Apple'].map(brand => (
-          <button
-            key={brand}
-            className={`brand-btn ${selectedBrand === brand ? 'active' : ''}`}
-            onClick={() => setSelectedBrand(brand)}
-          >
-            {brand === 'all' ? 'All Brands' : brand}
-          </button>
-        ))}
-      </div>
-    </div>
-  </section>
-)}
-
-{/* 🔥 Price Filter (ADD THIS BELOW BRAND FILTER) */}
-{isLaptopCategory && (
-  <section className="price-filter-section">
-    <div className="container">
-      <div className="price-filters">
-
-        <button
-          className={`price-btn ${selectedPriceRange === 'all' ? 'active' : ''}`}
-          onClick={() => setSelectedPriceRange('all')}
-        >
-          All Prices
-        </button>
-
-        {priceRanges.map(range => (
-          <button
-            key={range.label}
-            className={`price-btn ${selectedPriceRange === range.label ? 'active' : ''}`}
-            data-range={range.max <= 30000 ? "budget" : ""}
-            onClick={() => setSelectedPriceRange(range.label)}
-          >
-            {range.label}
-          </button>
-        ))}
-
-      </div>
-    </div>
-  </section>
-)}      {/* Products */}
+      {/* Products */}
       <section className="laptops-content">
         <div className="container">
           <div className="products-header">

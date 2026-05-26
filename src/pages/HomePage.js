@@ -114,7 +114,7 @@ function HomePage() {
                 </button>
               </div>
               <p className="hero-subtext fade-in-4">
-                💻 13 Laptops • 🔌 Chargers • 🖱️ Mouse • ⌨️ Keyboards • 💼 Bags & More
+                💻 16 Laptops • 🔌 Chargers • 🖱️ Mouse • ⌨️ Keyboards • 💼 Bags & More
               </p>
               <div className="hero-trust fade-in-4">
                 {[...Array(5)].map((_, i) => (
@@ -287,6 +287,91 @@ function HomePage() {
         </div>
       </section>
 
+      {/* ── Trending Products ── */}
+      <section className="trending">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-badge">Hot Deals</span>
+            <h2 className="section-title">Trending Laptops</h2>
+            <p className="trending-subtitle">Check out our most popular laptops this month</p>
+          </div>
+
+          <div className="trending-grid">
+            {/* Product 1 */}
+            <div className="trending-card">
+              <div className="trending-badge">🔥 Popular</div>
+              <div className="trending-image-wrapper">
+                <img src={require('../images/laptops/laptop11.png')} alt="HP ProBook 640 G4" className="trending-image" />
+              </div>
+              <div className="trending-content">
+                <h3 className="trending-name">HP ProBook 640 G4</h3>
+                <div className="trending-price">KSh 24,999</div>
+                <p className="trending-desc">Intel i5 8th Gen | 8GB RAM | 256GB SSD</p>
+                <div className="trending-bonus">🎁 Free Bag + Mouse</div>
+                <button className="btn-trending" onClick={() => navigate('/laptops')}>
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            {/* ── Product 4 ── Monitor */}
+      <div className="trending-card">
+        <div className="trending-badge">🖥️ Gaming</div>
+        <div className="trending-image-wrapper">
+          <img
+            src={require('../images/monitors/monitor3.png')}
+            alt="Dahua E330CA Monitor"
+            className="trending-image"
+          />
+        </div>
+        <div className="trending-content">
+          <h3 className="trending-name">
+            Dahua E330CA QHD Curved Monitor
+          </h3>
+          <div className="trending-price">KSh 29,000</div>
+          <p className="trending-desc">
+            27" QHD | 180Hz | 1ms Response | FreeSync
+          </p>
+          <div className="trending-tag">Ultra Smooth Gaming</div>
+          <button className="btn-trending" onClick={() => navigate('/monitors')}>
+            View Details
+          </button>
+        </div>
+      </div>
+
+      {/* ── Product 5 ── Accessory */}
+      <div className="trending-card">
+        <div className="trending-badge">❄️ Essential</div>
+        <div className="trending-image-wrapper">
+          <img
+            src={require('../images/accessories/cooling1.png')}
+            alt="Laptop Cooling Pad"
+            className="trending-image"
+          />
+        </div>
+        <div className="trending-content">
+          <h3 className="trending-name">Laptop Cooling Pad</h3>
+          <div className="trending-price">KSh 1,800</div>
+          <p className="trending-desc">
+            Dual Fan Cooling | 13–17 inch laptops
+          </p>
+          <div className="trending-tag">Improves Performance</div>
+          <button className="btn-trending" onClick={() => navigate('/accessories')}>
+            View Details
+          </button>
+        </div>
+      </div>
+
+    </div>
+          <div className="trending-cta">
+            <button className="btn-view-all" onClick={() => navigate('/laptops')}>
+              <ShoppingBag className="btn-icon" />
+              View All Laptops
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* ── Contact ── */}
       <section id="contact" className="contact">
         <div className="container">
@@ -332,20 +417,34 @@ function HomePage() {
 
             <div className="contact-form-wrapper">
               <h3 className="form-title">Request a Quote</h3>
-              <form className="contact-form">
-                <input type="text" placeholder="Full Name" className="form-input" />
-                <input type="email" placeholder="Email Address" className="form-input" />
-                <input type="tel" placeholder="Phone Number" className="form-input" />
-                <select className="form-input">
-                  <option>Service needed</option>
-                  <option>Laptop Repair</option>
-                  <option>Buy Laptop</option>
-                  <option>Upgrade/Maintenance</option>
+              <form className="contact-form" onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const service = formData.get('service');
+                const message = formData.get('message');
+                
+                const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Message:* ${message}`;
+                
+                window.location.href = `https://wa.me/254708636727?text=${whatsappMessage}`;
+              }}>
+                <input type="text" name="name" placeholder="Full Name" className="form-input" required />
+                <input type="email" name="email" placeholder="Email Address" className="form-input" required />
+                <input type="tel" name="phone" placeholder="Phone Number" className="form-input" required />
+                <select name="service" className="form-input" required>
+                  <option value="">Service needed</option>
+                  <option value="Laptop Repair">Laptop Repair</option>
+                  <option value="Buy Laptop">Buy Laptop</option>
+                  <option value="Upgrade/Maintenance">Upgrade/Maintenance</option>
                 </select>
                 <textarea
+                  name="message"
                   placeholder="Tell us about your laptop issue or requirements"
                   rows="4"
                   className="form-input form-textarea"
+                  required
                 ></textarea>
                 <button type="submit" className="btn-submit">Submit Request</button>
               </form>
