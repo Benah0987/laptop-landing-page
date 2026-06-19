@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Laptop, ArrowLeft, Cpu, HardDrive, Monitor, Battery, CheckCircle, ShoppingBag, Menu, X } from 'lucide-react';
+import { Laptop, ArrowLeft, CheckCircle, ShoppingBag, Menu, X } from 'lucide-react';
 
 function ProductDetailPage() {
   const navigate = useNavigate();
