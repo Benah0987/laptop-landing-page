@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LaptopsPage from './pages/LaptopsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/laptops" element={<LaptopsPage />} />
+        <Route path="/product/:productId" element={<ProductDetailPage />} />
       </Routes>
     </Router>
   );

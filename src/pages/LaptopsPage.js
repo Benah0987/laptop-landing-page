@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Laptop, ArrowLeft, Cpu, HardDrive, Monitor, Battery, CheckCircle, ShoppingBag, Menu, X } from 'lucide-react';
 
 function LaptopsPage() {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('laptops');
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   // LAPTOPS DATA
   const laptops = [
@@ -270,6 +270,34 @@ function LaptopsPage() {
       },
       warranty: "90 days",
       features: "Lightweight & Fast 💨 | High Performance | Perfect for Programming"
+    },
+    {
+      id: 22,
+      type: 'laptop',
+      name: "Premium 13.3\" Ultrabook",
+      brand: "Generic",
+      price: "KSh 80,000",
+      image: require('../images/laptops/laptop22.png'),
+      specs: {
+        processor: "Intel Core i5 13th Gen",
+        ram: "16GB DDR4",
+        storage: "512GB NVMe SSD",
+        display: "13.3\" FHD with narrow bezels",
+        battery: "8-10 hours"
+      },
+      warranty: "1 year",
+      features: "Ultra-Slim Design | Premium Aluminum | Backlit Keyboard | Fingerprint Reader",
+      fullDescription: "High-speed, efficient processing power with seamless multitasking and zero lag. Lightning-fast boot times with ample storage for files. Premium silver aluminum chassis built for maximum durability.",
+      details: [
+        "Intel Core i5 (13th Generation) – High-speed, efficient processing power",
+        "16GB RAM – Seamless multitasking and zero lag",
+        "512GB NVMe SSD – Lightning-fast boot times and ample storage for files",
+        "13.3-inch crisp, high-definition display with narrow bezels for maximum viewing area",
+        "Ultra-slim, professional silver aluminum chassis built for premium durability",
+        "Premium backlit keyboard with spacious precision touchpad",
+        "Fingerprint reader for quick, secure access",
+        "USB Type-C / Thunderbolt, HDMI, and high-speed Wi-Fi connectivity"
+      ]
     }
   ];
 
@@ -354,9 +382,108 @@ function LaptopsPage() {
       image: require('../images/accessories/ram1.png'),
       description: "8GB DDR4 RAM 2666MHz for laptop upgrade",
       compatibility: "Compatible with most modern laptops"
-    }
-  ];
-
+    },
+    {
+      id: 109,
+      type: 'accessory',
+      category: "phone",
+      name: "UGREEN LP106 Portable Phone Stand",
+      price: "KSh 1,000",
+      image: require('../images/accessories/phonestand1.png'),
+      description: "Adjustable mobile holder for desk, travel & tablet",
+      compatibility: "Universal - fits all phones and tablets",
+      features: "Adjustable | Portable | Lightweight | Premium Build"
+    },
+    {
+      id: 110,
+      type: 'accessory',
+      category: "cables",
+      name: "UGREEN Revodok 6-in-1 USB-C Hub",
+      price: "KSh 4,500",
+      image: require('../images/accessories/usbcgigabitconverter1.png'),
+      description: "6-in-1 USB-C expansion: 4K HDMI, Gigabit Ethernet, 100W PD charging, 3x USB 3.0",
+      compatibility: "USB-C laptops and devices",
+      features: "4K HDMI | Gigabit Ethernet | 100W Power Delivery | 5Gbps Data Transfer"
+    },
+    {
+      id: 111,
+      type: 'accessory',
+      category: "chargers",
+      name: "UGREEN Nexode 100W 4-Port Charger",
+      price: "KSh 6,500",
+      image: require('../images/accessories/nexode100.webp'),
+      description: "100W max output with 3x USB-C and 1x USB-A ports for universal fast charging",
+      compatibility: "MacBooks, iPhones, Samsung, tablets, and all devices",
+      features: "100W Max Output | 4-Device Charging | GaN Technology | Travel-Ready"
+    },
+    {
+      id: 112,
+      type: 'accessory',
+      category: "chargers",
+      name: "Lenovo 65W Laptop Charger",
+      price: "KSh 2,500",
+      image: require('../images/accessories/lenovo1.jpeg'),
+      description: "Original Lenovo 65W charger for ThinkPad and IdeaPad series",
+      compatibility: "Lenovo ThinkPad, IdeaPad series"
+    },
+    {
+      id: 113,
+      type: 'accessory',
+      category: "chargers",
+      name: "Lenovo 100W Laptop Charger",
+      price: "KSh 3,500",
+      image: require('../images/accessories/lenovo1.jpeg'),
+      description: "Original Lenovo 100W charger for high-performance ThinkPad series",
+      compatibility: "Lenovo ThinkPad (high-performance models)"
+    },
+    {
+      id: 109,
+      type: 'accessory',
+      category: "stand",
+      name: "UGREEN LP106 Portable Phone Stand",
+      price: "KSh 1,000",
+      image: require('../images/accessories/phonestand1.png'),
+      description: "Adjustable Mobile Holder for Desk, Travel & Tablet",
+      compatibility: "Universal - fits all phones and tablets",
+      features: "Portable | Adjustable | Durable Construction"
+    },
+    {
+      id: 110,
+      type: 'accessory',
+      category: "hubs",
+      name: "UGREEN Revodok 6-in-1 USB-C Hub",
+      price: "KSh 3,500",
+      image: require('../images/accessories/usbcgigabitconverter1.png'),
+      description: "Turns one USB-C port into 6: 4K HDMI, Gigabit Ethernet, 100W PD charging, and 3x USB 3.0 ports",
+      compatibility: "USB-C laptops and devices",
+      features: "4K HDMI | Gigabit Ethernet (1000Mbps) | 100W PD | 3x USB 3.0",
+      details: [
+        "6-in-1 Expansion with 4K HDMI support",
+        "Gigabit Ethernet for up to 1000Mbps speed",
+        "100W Power Delivery for safe pass-through charging",
+        "3x USB 3.0 ports with 5Gbps data transfer",
+        "4K@30Hz display support for crisp presentations"
+      ]
+    },
+    {
+      id: 111,
+      type: 'accessory',
+      category: "chargers",
+      name: "UGREEN Nexode 100W 4-Port Charger",
+      price: "KSh 4,500",
+      image: require('../images/accessories/nexode100.webp'),
+      description: "4-Device Fast Charging with 3x USB-C and 1x USB-A ports",
+      compatibility: "MacBooks, iPhones, Samsung, tablets, and all USB-C devices",
+      features: "100W Max Output | 4-Port Fast Charging | GaN Technology",
+      details: [
+        "100W Max Output - charge two MacBooks simultaneously",
+        "4-Device Fast Charging with 3x USB-C and 1x USB-A",
+        "Universal Compatibility with all major devices",
+        "Smart Protection against short circuits and overheating",
+        "Compact & Travel-Ready with GaN technology"
+      ]
+    },
+  ]
   // MONITORS DATA
   const monitors = [
     {
@@ -401,7 +528,7 @@ function LaptopsPage() {
       category: "monitors",
       name: "Dahua E330CA QHD Curved Gaming Monitor",
       brand: "Dahua",
-      price: "KSh 32,000",
+      price: "KSh 29,000",
       image: require('../images/monitors/monitor3.png'),
       specs: {
         size: "27\" QHD (2560 x 1440)",
@@ -418,36 +545,32 @@ function LaptopsPage() {
 
   // CATEGORIES
   const categories = [
-    { value: 'laptops', label: 'Laptops', icon: '💻', count: 16 },
-    { value: 'monitors', label: 'Monitors', icon: '🖥️', count: monitors.length }, //
+    { value: 'laptops', label: 'Laptops', icon: '💻', count: 17 },
+    { value: 'monitors', label: 'Monitors', icon: '🖥️', count: monitors.length },
     { value: 'chargers', label: 'Chargers', icon: '🔌', count: accessories.filter(a => a.category === 'chargers').length },
     { value: 'mouse', label: 'Mouse', icon: '🖱️', count: accessories.filter(a => a.category === 'mouse').length },
     { value: 'keyboards', label: 'Keyboards', icon: '⌨️', count: accessories.filter(a => a.category === 'keyboards').length },
     { value: 'cooling', label: 'Cooling', icon: '❄️', count: accessories.filter(a => a.category === 'cooling').length },
-    { value: 'cables', label: 'Cables & Hubs', icon: '🔗', count: accessories.filter(a => a.category === 'cables').length },
+    { value: 'hubs', label: 'Hubs & Adapters', icon: '🔌', count: accessories.filter(a => a.category === 'hubs' || a.category === 'cables').length },
     { value: 'bags', label: 'Bags', icon: '💼', count: accessories.filter(a => a.category === 'bags').length },
+    { value: 'stand', label: 'Phone Stands', icon: '📱', count: accessories.filter(a => a.category === 'stand').length },
     { value: 'ram', label: 'RAM', icon: '💾', count: accessories.filter(a => a.category === 'ram').length }
   ];
 
   // Filter logic
-  // In your getFilteredItems function:
-const getFilteredItems = () => {
-  if (selectedCategory === 'laptops') {
-    return selectedBrand === 'all' ? laptops : laptops.filter(l => l.brand === selectedBrand);
-  } else if (selectedCategory === 'monitors') {
-    return monitors; // This is the missing link!
-  } else {
-    return accessories.filter(a => a.category === selectedCategory);
-  }
-};
-
-  useEffect(() => {
-    const category = searchParams.get('category');
-    if (category && category !== selectedCategory) {
-      setSelectedCategory(category);
-      setSelectedBrand('all');
+  const getFilteredItems = () => {
+    if (selectedCategory === 'laptops') {
+      return selectedBrand === 'all' 
+        ? laptops 
+        : laptops.filter(l => l.brand === selectedBrand);
+    } else if (selectedCategory === 'monitors') {
+      return monitors;
+    } else if (selectedCategory === 'hubs') {
+      return accessories.filter(a => a.category === 'hubs' || a.category === 'cables');
+    } else {
+      return accessories.filter(a => a.category === selectedCategory);
     }
-  }, [searchParams, selectedCategory]);
+  };
 
   const filteredItems = getFilteredItems();
   const isLaptopCategory = selectedCategory === 'laptops';
@@ -621,16 +744,14 @@ const getFilteredItems = () => {
                   {/* Buy Button */}
                   <button 
                     className={isLaptopCategory ? 'btn-product' : 'btn-accessory'} 
-                    onClick={() => {
-                      window.location.href = `https://wa.me/254708636727?text=Hi! I'm interested in the ${item.name}`;
-                    }}
+                    onClick={() => setSelectedProduct(item)}
                   >
                     {isLaptopCategory ? (
-                      'Contact to Buy'
+                      'View Details'
                     ) : (
                       <>
                         <ShoppingBag className="btn-icon-sm" />
-                        Buy Now
+                        View Details
                       </>
                     )}
                   </button>
@@ -647,6 +768,126 @@ const getFilteredItems = () => {
           )}
         </div>
       </section>
+
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <div className="product-modal-overlay" onClick={() => setSelectedProduct(null)}>
+          <div className="product-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setSelectedProduct(null)}>
+              <X className="icon" />
+            </button>
+
+            {selectedProduct ? (
+              <div className="modal-grid">
+                {/* Image */}
+                <div className="modal-image-section">
+                  {selectedProduct.image && (
+                    <img 
+                      src={selectedProduct.image} 
+                      alt={selectedProduct.name || 'Product'}
+                      className="modal-product-image"
+                      onError={(e) => {
+                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect fill="%23f0f0f0" width="200" height="200"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23999" font-size="14"%3EImage not found%3C/text%3E%3C/svg%3E';
+                      }}
+                    />
+                  )}
+                </div>
+
+                {/* Details */}
+                <div className="modal-details-section">
+                  <h1 className="modal-product-name">{selectedProduct.name || 'Product'}</h1>
+                  <div className="modal-price">{selectedProduct.price || 'Contact for price'}</div>
+
+                  {/* Specs/Features */}
+                  {selectedProduct.specs && Object.keys(selectedProduct.specs).length > 0 && (
+                    <div className="modal-specs">
+                      <h3 className="specs-title">Specifications</h3>
+                      <div className="specs-list">
+                        {Object.entries(selectedProduct.specs).map(([key, value]) => (
+                          <div key={key} className="spec-row">
+                            <span className="spec-label">{key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                            <span className="spec-value">{value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Description */}
+                  {selectedProduct.description && (
+                    <div className="modal-description">
+                      <p>{selectedProduct.description}</p>
+                    </div>
+                  )}
+
+                  {/* Warranty */}
+                  {selectedProduct.warranty && (
+                    <div className="modal-warranty">
+                      <CheckCircle className="warranty-icon" />
+                      <span>{selectedProduct.warranty} warranty included</span>
+                    </div>
+                  )}
+
+                  {/* Extras (for laptops) */}
+                  {selectedProduct.extras && (
+                    <div className="modal-extras">
+                      🎁 {selectedProduct.extras}
+                    </div>
+                  )}
+
+                  {/* Features */}
+                  {selectedProduct.features && (
+                    <div className="modal-features">
+                      <h3 className="features-title">Key Features</h3>
+                      <p className="features-text">✨ {selectedProduct.features}</p>
+                    </div>
+                  )}
+
+                  {/* Highlights */}
+                  {selectedProduct.highlights && (
+                    <div className="modal-highlights">
+                      <h3 className="highlights-title">Why Choose This?</h3>
+                      <p className="highlights-text">{selectedProduct.highlights}</p>
+                    </div>
+                  )}
+
+                  {/* Compatibility */}
+                  {selectedProduct.compatibility && (
+                    <div className="modal-compatibility">
+                      <CheckCircle className="compat-icon" />
+                      <span>{selectedProduct.compatibility}</span>
+                    </div>
+                  )}
+
+                  {/* CTA Buttons */}
+                  <div className="modal-actions">
+                    <button 
+                      className="btn-contact-now"
+                      onClick={() => {
+                        const priceText = selectedProduct.price ? selectedProduct.price.replace('KSh ', '') : 'Product';
+                        window.location.href = `https://wa.me/254708636727?text=Hi! I'm interested in the ${selectedProduct.name} (${priceText})`;
+                      }}
+                    >
+                      <ShoppingBag className="btn-icon-sm" />
+                      Contact to Buy
+                    </button>
+                    <button 
+                      className="btn-close-modal"
+                      onClick={() => setSelectedProduct(null)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="modal-error">
+                <p>Product not found. Please try again.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="footer">

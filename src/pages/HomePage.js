@@ -114,7 +114,7 @@ function HomePage() {
                 </button>
               </div>
               <p className="hero-subtext fade-in-4">
-                💻 16 Laptops • 🔌 Chargers • 🖱️ Mouse • ⌨️ Keyboards • 💼 Bags & More
+                💻 17 Laptops • 🖥️ 3 Monitors • 🔌 Chargers • 🖱️ Mouse • 📱 Stands & More
               </p>
               <div className="hero-trust fade-in-4">
                 {[...Array(5)].map((_, i) => (
@@ -139,92 +139,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-       {/* ── Trending Products ── */}
-      <section className="trending">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Hot Deals</span>
-            <h2 className="section-title">Trending Laptops</h2>
-            <p className="trending-subtitle">Check out our most popular laptops this month</p>
-          </div>
-
-          <div className="trending-grid">
-            {/* Product 1 */}
-            <div className="trending-card">
-              <div className="trending-badge">🔥 Popular</div>
-              <div className="trending-image-wrapper">
-                <img src={require('../images/laptops/laptop11.png')} alt="HP ProBook 640 G4" className="trending-image" />
-              </div>
-              <div className="trending-content">
-                <h3 className="trending-name">HP ProBook 640 G4</h3>
-                <div className="trending-price">KSh 24,999</div>
-                <p className="trending-desc">Intel i5 8th Gen | 8GB RAM | 256GB SSD</p>
-                <div className="trending-bonus">🎁 Free Bag + Mouse</div>
-                <button className="btn-trending" onClick={() => navigate('/laptops')}>
-                  View Details
-                </button>
-              </div>
-            </div>
-
-            {/* ── Product 4 ── Monitor */}
-      <div className="trending-card">
-        <div className="trending-badge">🖥️ Gaming</div>
-        <div className="trending-image-wrapper">
-          <img
-            src={require('../images/monitors/monitor3.png')}
-            alt="Dahua E330CA Monitor"
-            className="trending-image"
-          />
-        </div>
-        <div className="trending-content">
-          <h3 className="trending-name">
-            Dahua E330CA QHD Curved Monitor
-          </h3>
-          <div className="trending-price">KSh 32,000</div>
-          <p className="trending-desc">
-            27" QHD | 180Hz | 1ms Response | FreeSync
-          </p>
-          <div className="trending-tag">Ultra Smooth Gaming</div>
-          <button className="btn-trending" onClick={() => navigate('/laptops?category=monitors')}>
-            View Details
-          </button>
-        </div>
-      </div>
-
-      {/* ── Product 5 ── Accessory */}
-      <div className="trending-card">
-        <div className="trending-badge">❄️ Essential</div>
-        <div className="trending-image-wrapper">
-          <img
-            src={require('../images/accessories/cooling1.png')}
-            alt="Laptop Cooling Pad"
-            className="trending-image"
-          />
-        </div>
-        <div className="trending-content">
-          <h3 className="trending-name">Laptop Cooling Pad</h3>
-          <div className="trending-price">KSh 1,800</div>
-          <p className="trending-desc">
-            Dual Fan Cooling | 13–17 inch laptops
-          </p>
-          <div className="trending-tag">Improves Performance</div>
-          <button className="btn-trending" onClick={() => navigate('/accessories')}>
-            View Details
-          </button>
-        </div>
-      </div>
-
-    </div>
-          <div className="trending-cta">
-            <button className="btn-view-all" onClick={() => navigate('/laptops')}>
-              <ShoppingBag className="btn-icon" />
-              View All Laptops
-            </button>
-          </div>
-        </div>
-      </section>
-
 
       {/* ── Services ── */}
       <section id="services" className="services">
@@ -373,7 +287,77 @@ function HomePage() {
         </div>
       </section>
 
-     
+      {/* ── Trending Products ── */}
+      <section className="trending">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-badge">Hot Deals</span>
+            <h2 className="section-title">Trending Laptops</h2>
+            <p className="trending-subtitle">Check out our most popular laptops this month</p>
+          </div>
+
+          <div className="trending-grid">
+            {/* Product 1 */}
+            <div className="trending-card">
+              <div className="trending-badge">🔥 Popular</div>
+              <div className="trending-image-wrapper">
+                <img src={require('../images/laptops/laptop11.png')} alt="HP ProBook 640 G4" className="trending-image" />
+              </div>
+              <div className="trending-content">
+                <h3 className="trending-name">HP ProBook 640 G4</h3>
+                <div className="trending-price">KSh 24,999</div>
+                <p className="trending-desc">Intel i5 8th Gen | 8GB RAM | 256GB SSD</p>
+                <div className="trending-bonus">🎁 Free Bag + Mouse</div>
+                <button className="btn-trending" onClick={() => navigate('/laptops')}>
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            {/* Product 2 */}
+            <div className="trending-card">
+              <div className="trending-badge">⚡ Best Value</div>
+              <div className="trending-image-wrapper">
+                <img src={require('../images/laptops/laptop15.png')} alt="HP EliteBook 840 G3" className="trending-image" />
+              </div>
+              <div className="trending-content">
+                <h3 className="trending-name">HP EliteBook 840 G3</h3>
+                <div className="trending-price">KSh 23,500</div>
+                <p className="trending-desc">Intel i5 6th Gen | 8GB RAM | 256GB SSD</p>
+                <div className="trending-tag">Budget Friendly</div>
+                <button className="btn-trending" onClick={() => navigate('/laptops')}>
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            {/* Product 3 */}
+            <div className="trending-card">
+              <div className="trending-badge">💎 Premium</div>
+              <div className="trending-image-wrapper">
+                <img src={require('../images/laptops/laptop16.jpg')} alt="HP ProBook 635 G7 Aero" className="trending-image" />
+              </div>
+              <div className="trending-content">
+                <h3 className="trending-name">HP ProBook 635 G7 Aero</h3>
+                <div className="trending-price">KSh 28,000</div>
+                <p className="trending-desc">AMD Ryzen 5 | 16GB RAM | 256GB SSD</p>
+                <div className="trending-tag">High Performance</div>
+                <button className="btn-trending" onClick={() => navigate('/laptops')}>
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="trending-cta">
+            <button className="btn-view-all" onClick={() => navigate('/laptops')}>
+              <ShoppingBag className="btn-icon" />
+              View All Laptops
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* ── Contact ── */}
       <section id="contact" className="contact">
         <div className="container">
