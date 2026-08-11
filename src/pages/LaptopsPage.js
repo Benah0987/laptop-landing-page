@@ -540,7 +540,61 @@ function LaptopsPage() {
       warranty: "1 year",
       highlights: "Ultra-Smooth Gaming | Tear-Free Experience",
       features: "180Hz Refresh Rate | 1ms Response Time | Gaming Optimized"
-    }
+    },
+    {
+  id: 204,
+  type: 'monitor',
+  category: "monitors",
+  name: "HP 524SF 23.8\" Monitor",
+  brand: "HP",
+  price: "KSh 23,000",
+  image: require('../images/monitors/monitor4.png'),
+  specs: {
+    size: "23.8\"",
+    panel: "LED",
+    connectivity: "HDMI + VGA",
+    features: "Full HD | Slim Design"
+  },
+  description: "23.8\" HP monitor with HDMI and VGA connectivity, ideal for work and everyday use.",
+  warranty: "1 year",
+  highlights: "HDMI + VGA Connectivity | Full HD Display"
+},
+{
+  id: 205,
+  type: 'monitor',
+  category: "monitors",
+  name: "HP S3 Pro 322PE 21.45\" Monitor",
+  brand: "HP",
+  price: "KSh 16,500",
+  image: require('../images/monitors/monitor5.png'),
+  specs: {
+    size: "21.45\"",
+    panel: "LED",
+    connectivity: "HDMI + VGA",
+    features: "Full HD | Slim Design"
+  },
+  description: "21.45\" HP S3 Pro monitor with HDMI and VGA connectivity.",
+  warranty: "1 year",
+  highlights: "HDMI + VGA Connectivity | Compact Full HD Display"
+},
+{
+  id: 206,
+  type: 'monitor',
+  category: "monitors",
+  name: "HP P204 19.5\" Monitor",
+  brand: "HP",
+  price: "KSh 14,500",
+  image: require('../images/monitors/monitor6.png'),
+  specs: {
+    size: "19.5\"",
+    panel: "LED",
+    connectivity: "HDMI + VGA",
+    features: "HDMI Connectivity | VGA Connectivity"
+  },
+  description: "19.5\" HP P204 monitor with HDMI and VGA connectivity, suitable for office and everyday use.",
+  warranty: "1 year",
+  highlights: "HDMI + VGA Connectivity | Compact Design"
+}
   ];
 
   // CATEGORIES
