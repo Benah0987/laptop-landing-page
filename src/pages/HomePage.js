@@ -316,37 +316,67 @@ function HomePage() {
 
             {/* Product 2 */}
             <div className="trending-card">
-              <div className="trending-badge">⚡ Best Value</div>
-              <div className="trending-image-wrapper">
-                <img src={require('../images/laptops/laptop15.png')} alt="HP EliteBook 840 G3" className="trending-image" />
-              </div>
-              <div className="trending-content">
-                <h3 className="trending-name">HP EliteBook 840 G3</h3>
-                <div className="trending-price">KSh 23,500</div>
-                <p className="trending-desc">Intel i5 6th Gen | 8GB RAM | 256GB SSD</p>
-                <div className="trending-tag">Budget Friendly</div>
-                <button className="btn-trending" onClick={() => navigate('/laptops')}>
-                  View Details
-                </button>
-              </div>
-            </div>
+  <div className="trending-badge">🖥️ HP Monitor</div>
+
+  <div className="trending-image-wrapper">
+    <img
+      src={require('../images/monitors/monitor6.png')}
+      alt="HP P204 19.5 Monitor"
+      className="trending-image"
+    />
+  </div>
+
+  <div className="trending-content">
+    <h3 className="trending-name">HP P204 19.5" Monitor</h3>
+
+    <div className="trending-price">KSh 14,500</div>
+
+    <p className="trending-desc">
+      19.5" Display | HDMI + VGA | Compact Design
+    </p>
+
+    <div className="trending-tag">Work & Study</div>
+
+    <button
+      className="btn-trending"
+      onClick={() => navigate('/monitors')}
+    >
+      View Details
+    </button>
+  </div>
+</div>
 
             {/* Product 3 */}
             <div className="trending-card">
-              <div className="trending-badge">💎 Premium</div>
-              <div className="trending-image-wrapper">
-                <img src={require('../images/laptops/laptop16.jpg')} alt="HP ProBook 635 G7 Aero" className="trending-image" />
-              </div>
-              <div className="trending-content">
-                <h3 className="trending-name">HP ProBook 635 G7 Aero</h3>
-                <div className="trending-price">KSh 28,000</div>
-                <p className="trending-desc">AMD Ryzen 5 | 16GB RAM | 256GB SSD</p>
-                <div className="trending-tag">High Performance</div>
-                <button className="btn-trending" onClick={() => navigate('/laptops')}>
-                  View Details
-                </button>
-              </div>
-            </div>
+  <div className="trending-badge">💎 2-in-1</div>
+
+  <div className="trending-image-wrapper">
+    <img
+      src={require('../images/laptops/laptop23.png')}
+      alt="Lenovo IdeaPad Duet 3i"
+      className="trending-image"
+    />
+  </div>
+
+  <div className="trending-content">
+    <h3 className="trending-name">Lenovo IdeaPad Duet 3i</h3>
+
+    <div className="trending-price">KSh 14,000</div>
+
+    <p className="trending-desc">
+      Intel Celeron | 4GB RAM | 64GB Storage | Touchscreen
+    </p>
+
+    <div className="trending-tag">Detachable 2-in-1</div>
+
+    <button
+      className="btn-trending"
+      onClick={() => navigate('/laptops')}
+    >
+      View Details
+    </button>
+  </div>
+</div>
           </div>
 
           <div className="trending-cta">

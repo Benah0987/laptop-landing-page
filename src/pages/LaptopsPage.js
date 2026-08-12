@@ -298,7 +298,48 @@ function LaptopsPage() {
         "Fingerprint reader for quick, secure access",
         "USB Type-C / Thunderbolt, HDMI, and high-speed Wi-Fi connectivity"
       ]
-    }
+    },
+    {
+  id: 23,
+  type: 'laptop',
+  name: "Lenovo IdeaPad Duet 3i / IdeaPad 3",
+  brand: "Lenovo",
+  price: "KSh 14,000",
+  image: require('../images/laptops/laptop23.png'),
+  specs: {
+    processor: "Intel Celeron",
+    ram: "4GB",
+    storage: "64GB",
+    display: "Touchscreen",
+    formFactor: "2-in-1 Detachable",
+    cameras: "Front & Rear Cameras",
+    connectivity: "SIM Card Slot | MicroSD Card Reader | USB Ports | Audio Jack | USB Type-C Charging"
+  },
+  warranty: "365 days",
+  features: "Detachable Keyboard | Touchscreen | Front & Rear Cameras | SIM Card Slot | MicroSD | USB Ports",
+  description: "A compact 2-in-1 touchscreen laptop with a detachable keyboard, ideal for light use, school, CBC students, and children."
+},
+
+{
+  id: 24,
+  type: 'laptop',
+  name: "Toshiba Dynabook K50",
+  brand: "Toshiba",
+  price: "KSh 14,000",
+  image: require('../images/laptops/laptop24.png'),
+  specs: {
+    processor: "Intel Celeron",
+    ram: "4GB",
+    storage: "64GB",
+    display: "10.1\" Touchscreen",
+    formFactor: "2-in-1 Detachable",
+    cameras: "Front & Rear Cameras",
+    connectivity: "SIM Card Slot | MicroSD Card Reader | USB Ports | Audio Jack | Power Port"
+  },
+  warranty: "365 days",
+  features: "Detachable Keyboard | 10.1\" Touchscreen | Front & Rear Cameras | SIM Card Slot | MicroSD | USB Ports",
+  description: "A compact 2-in-1 touchscreen laptop designed for light use, school, CBC students, and children."
+}
   ];
 
   // ACCESSORIES DATA
